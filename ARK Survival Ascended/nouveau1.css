@@ -1,0 +1,152 @@
+/* 1. RESET & VARIABLES */
+:root {
+    --ark-yellow: #f1c40f;
+    --ark-blue: #00d2ff;
+    --glass-bg: rgba(0, 0, 0, 0.75);
+    --panel-transition: 0.4s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+/* 2. LAYOUT DU SITE */
+body {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("Images/ARK2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: white;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* 3. TYPOGRAPHIE */
+h1 {
+    color: var(--ark-yellow);
+    font-size: clamp(40px, 8vw, 80px);
+    margin: 60px 0;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-left: 4px solid var(--ark-yellow);
+    width: 100%;
+}
+
+/* 4. MENU DES MAPS */
+
+.sbi_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 575px;
+    background: #000;
+    overflow: hidden;
+    gap: 0;
+}
+
+/* Image de fond dynamique */
+.sbi_bg {
+    position: absolute;
+    inset: 0;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    transition: background-image 0.4s ease;
+}
+
+/* Chaque map */
+.sbi_panel {
+    width: 25%;          /* 4 maps par ligne */
+    height: 100px;       /* moitié du bandeau */
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0px;
+	margin: 0;
+}
+
+/* Image générée par le script */
+.sbi_panel_img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.maps-wrapper{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    background: black;
+}
+
+.maps-container{
+    display: flex;
+    gap: 0;
+    transition: transform 0.2s linear;
+}
+
+.map{
+    min-width: 25%;   /* 4 maps visibles */
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    color: white;
+}
+
+.scroll-zone{
+    position: absolute;
+    top:0;
+    width: 20%;
+    height:100%;
+    z-index:10;
+}
+
+.scroll-zone.left{
+    left:0;
+}
+
+.scroll-zone.right{
+    right:0;
+}
+.scroll-zone{
+    position:absolute;
+    top:0;
+    width:20%;
+    height:100%;
+    z-index:20;
+}
+
+.scroll-zone.left{
+    left:0;
+}
+
+.scroll-zone.right{
+    right:0;
+}

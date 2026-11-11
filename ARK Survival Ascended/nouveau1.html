@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <title>Ark Survival Ascended - Accueil</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle&v1' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="Test.css"> <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		const background = document.getElementById('sbi_global_bg');
+		const panels = document.querySelectorAll('.sbi_panel');
+
+		panels.forEach(panel => {
+			panel.addEventListener('mouseenter', function() {
+				const imageUrl = this.getAttribute('data-bg');
+				if (imageUrl) {
+					// On applique l'image sur la div de fond globale
+					background.style.backgroundImage = "url('" + imageUrl + "')";
+				}
+        });
+    });
+});
+	
+	
+	</script>
+
+	<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    const background = document.getElementById('sbi_global_bg');
+    const panels = document.querySelectorAll('.sbi_panel');
+
+    // ----- Préchargement des images -----
+    panels.forEach(panel => {
+        const img = new Image();
+        img.src = panel.getAttribute('data-bg');
+    });
+
+    // ----- Image affichée au chargement (premier panel) -----
+    if (panels.length > 0) {
+        const firstImage = panels[0].getAttribute('data-bg');
+        if (firstImage) {
+            background.style.backgroundImage = "url('" + firstImage + "')";
+        }
+    }
+
+    // ----- Changement d'image au survol -----
+    panels.forEach(panel => {
+        panel.addEventListener('mouseenter', function() {
+            const imageUrl = this.getAttribute('data-bg');
+            if (imageUrl) {
+                background.style.backgroundImage = "url('" + imageUrl + "')";
+            }
+        });
+    });
+
+   
+
+});
+</script>
+
+</head>
+
+<body>
+
+<h1>Ark Survival Ascended</h1>
+
+<div class="intro-text">
+<p>
+        Développé par Studio Wildcard, Grove Street Games, Instinct Games S.A.E., Ark: Survival Ascended est un jeu vidéo d'action-aventure
+		et de survie. Il s'agit d'une version remasterisée d'Ark: Survival Evolved sorti en 2017. Le jeu est sorti en accès anticipé sur Windows 
+		le 25 octobre 2023, sur Xbox Series X/S le 21 novembre 2023 et sur PlayStation 5 le 30 novembre 2023.</p>
+        <p>Ark: Survival Evolved est un jeu de survie en monde ouvert qui plonge les joueurs sur une île mystérieuse et sauvage, peuplée de
+		dinosaures et de créatures préhistoriques majestueuses mais redoutables. Le concept repose sur un mélange unique de survie primitive et 
+		de technologie avancée : vous commencez nu et sans ressources sur une plage, pour finir par piloter des armures robotiques et construire
+		des bases futuristes. La grande force du titre réside dans son système d'apprivoisement (taming), permettant de capturer et de monter 
+		presque toutes les créatures du jeu pour s'en servir comme montures, bêtes de somme ou gardiens de combat. Qu'il s'agisse de récolter des 
+		ressources, d'explorer des grottes sous-marines ou d'affronter des boss titanesques en multijoueur, le jeu offre une liberté immense et une
+		progression constante qui ont captivé des millions de fans à travers le monde. Ark Survival Evolved contient de nombreux DLC mais il est 
+		tout 
+		à fait possible de jouer sur de nombreuses maps sans pour autant acheter ces DLC. Nous pouvons retrouver dans la version de base du jeu 7 maps 
+		gratuites.</p>
+    
+
+</div>
+
+
+<div class="maps-wrapper">
+
+    <!-- zone scroll gauche -->
+    <div class="scroll-zone left"></div>
+
+    <div class="sbi_container" id="sbi_container">
+
+        <div class="sbi_bg" id="sbi_global_bg"></div>
+
+        <div class="sbi_panel" data-bg="Images/TheIsland.jpg"><a href="site web/The Island/TheIsland.html" class="sbi_label">The Island</a></div>
+		<div class="sbi_panel" data-bg="Images/ark scorched earth.webp"><a href="#" class="sbi_label">Scorched Earth</a></div>
+        <div class="sbi_panel" data-bg="Images/Aberration.jpg"><a href="#" class="sbi_label">Aberration</a></div>
+        <div class="sbi_panel" data-bg="Images/TheCenter.jpg"><a href="#" class="sbi_label">The Center</a></div>
+        <div class="sbi_panel" data-bg="Images/Ragnarok.jpg"><a href="#" class="sbi_label">Ragnarok</a></div>
+        <div class="sbi_panel" data-bg="Images/Valguero.jpg"><a href="#" class="sbi_label">Valguero</a></div>
+        <div class="sbi_panel" data-bg="Images/LostIsland.jpg"><a href="#" class="sbi_label">Lost Island</a></div>
+        <div class="sbi_panel" data-bg="Images/Crystal Isles.jpg"><a href="#" class="sbi_label">Crystal Isles</a></div>
+        <div class="sbi_panel" data-bg="Images/Fjordur.jpg"><a href="#" class="sbi_label">Fjordur</a></div>
+        <div class="sbi_panel" data-bg="Images/Lost Colony.jpg"><a href="#" class="sbi_label">Lost Colony</a></div>
+        <div class="sbi_panel" data-bg="Images/Ark geneses 1.jpg"><a href="#" class="sbi_label">Genesis 1</a></div>
+        <div class="sbi_panel" data-bg="Images/Ark genesis 2.jpg"><a href="#" class="sbi_label">Genesis 2</a></div>
+
+    </div>
+
+    <!-- zone scroll droite -->
+    <div class="scroll-zone right"></div>
+
+</div>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const background = document.getElementById("sbi_global_bg");
+const panels = document.querySelectorAll(".sbi_panel");
+
+panels.forEach(panel => {
+
+    const img = new Image();
+    img.src = panel.dataset.bg;
+
+    panel.addEventListener("mouseenter", function(){
+        background.style.backgroundImage = "url('" + panel.dataset.bg + "')";
+    });
+
+});
+
+
+const container = document.querySelector(".sbi_container");
+const left = document.querySelector(".scroll-zone.left");
+const right = document.querySelector(".scroll-zone.right");
+
+let scrollInterval;
+
+function startScroll(direction){
+
+scrollInterval = setInterval(function(){
+container.scrollLeft += direction * 10;
+},16);
+
+}
+
+function stopScroll(){
+clearInterval(scrollInterval);
+}
+
+right.addEventListener("mouseenter", () => startScroll(1));
+left.addEventListener("mouseenter", () => startScroll(-1));
+
+right.addEventListener("mouseleave", stopScroll);
+left.addEventListener("mouseleave", stopScroll);
+
+});
+
+</script>
+
+</body>
+</html>
